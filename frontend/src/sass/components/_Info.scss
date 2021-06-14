@@ -1,0 +1,27 @@
+.info {
+  grid-column: full-start / full-end;
+  background-image: url("../../images/back_2.png");
+  color: $color-primary;
+  padding: 8rem 0;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  grid-gap: 3rem;
+
+  &__box {
+    img {
+      max-width: 10rem;
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+
+    p {
+      margin-top: 1rem;
+    }
+  }
+}

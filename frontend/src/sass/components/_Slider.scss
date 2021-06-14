@@ -1,0 +1,150 @@
+.slider-grid {
+  grid-column: full-start / full-end;
+}
+
+.slider {
+  grid-column: full-start / full-end;
+  display: grid;
+  padding: 1rem;
+  grid-column: center-start / full-end;
+  background-image: linear-gradient(rgba(#000, 0.5), rgba(#000, 0.5)),
+    url('../../images/slider-bg.jpg');
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: calc(100vh - 25rem);
+  text-align: center;
+}
+
+.slick-track {
+  display: flex;
+  height: 100%;
+}
+.slick-track .slick-slide {
+  display: flex;
+  height: auto;
+}
+
+.slick-next,
+.slick-prev {
+  background-color: transparent;
+}
+
+.slick-arrow.slick-next,
+.slick-arrow.slick-prev {
+  background: transparent !important;
+  font-size: 2rem !important;
+  z-index: 1000;
+}
+
+.slick-next:before,
+.slick-prev:before {
+  font-size: 3.5rem;
+  z-index: 1000;
+}
+
+.slick-next {
+  position: absolute;
+  right: 3rem;
+  background: transparent;
+}
+
+.slick-prev {
+  position: absolute;
+  left: 3rem;
+}
+
+.slick-dots {
+  position: absolute;
+  width: 99% !important;
+  bottom: 2rem !important;
+}
+
+.slick-dots li button:before {
+  color: $color-white;
+  font-size: 1.6rem;
+}
+
+.slick-dots li.slick-active button:before {
+  color: $color-white;
+}
+
+// **********SLIDER CONTENT
+
+.slick-slide {
+  justify-content: center;
+  align-items: center;
+}
+
+.slider-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 124rem;
+  height: 51rem;
+  &--left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+
+    p {
+      margin-top: 4rem;
+      font-weight: 300;
+      font-size: 2rem;
+    }
+  }
+
+  &--btns {
+    margin-top: 1rem;
+    display: flex;
+
+    a {
+      margin-right: 2rem;
+    }
+  }
+
+  &--right {
+    width: 40rem;
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.line {
+  content: '';
+  width: 60rem;
+  height: 0.3rem;
+  background-color: $color-white;
+}
+
+.btn-primary,
+.btn-secondary {
+  display: flex;
+  padding: 0.7rem 2rem;
+  border: 0.2rem solid transparent;
+  font-size: 1.4rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  transition: all 0.3s;
+}
+.btn-primary {
+  background-color: $color-secondary;
+  color: $color-primary;
+}
+
+.btn-primary:hover {
+  background-color: transparent;
+  color: $color-secondary;
+  border: 0.2rem solid $color-secondary;
+}
+
+.btn-secondary {
+  border: 0.2rem solid $color-white;
+}
+
+.btn-secondary:hover {
+  color: $color-secondary;
+  border: 0.2rem solid $color-secondary;
+}

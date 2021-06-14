@@ -1,0 +1,96 @@
+.ReactModal__Overlay {
+  background-color: rgba(0, 0, 0, 0.616) !important;
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 500ms ease-in-out;
+}
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+  transform: translateX(0px);
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+  transform: translateX(-100px);
+}
+
+.loginForm {
+  @include centerPosition;
+  background-color: $color-primary-2;
+  width: 36rem;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  align-items: center;
+  transition: all 0.2s ease-in;
+
+  div > * {
+    margin-bottom: 2rem;
+  }
+
+  h3 {
+    margin: 2rem 0;
+  }
+
+  input {
+    padding: 0.5rem 1rem;
+    padding-left: 2.5rem;
+    font-size: 1.7rem;
+    width: 30rem;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+    color: $color-white;
+  }
+
+  input:active,
+  input:focus {
+    outline: none;
+  }
+
+  &__box {
+    position: relative;
+  }
+
+  &__box:nth-child(1) {
+    position: absolute;
+  }
+
+  button {
+    display: block;
+    padding: 0.5rem 4rem;
+    background-color: transparent;
+    font-size: 1.7rem;
+    color: $color-secondary;
+    font-weight: 500;
+    border: 0.1rem solid $color-secondary;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  button:hover {
+    background-color: $color-secondary;
+    border: 0.1rem solid $color-secondary;
+    color: $color-primary;
+  }
+
+  &__create {
+    margin-top: 2rem;
+    padding: 0.5rem;
+    display: flex;
+    width: 100%;
+    border-top: 1px solid $color-white;
+    justify-content: center;
+    font-weight: 500;
+    a {
+      color: $color-secondary;
+      margin-left: 0.5rem;
+    }
+  }
+}
+
+.iconInput {
+  position: absolute;
+  top: 0.1rem;
+}

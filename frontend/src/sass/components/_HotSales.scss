@@ -1,0 +1,42 @@
+.hot-sales {
+  grid-column: full-start / full-end;
+  padding: 8rem 0;
+  color: $color-white;
+
+  h3 {
+    font-size: 1.7rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: all 0.3s;
+  }
+
+  h5 {
+    text-align: center;
+  }
+
+  &__products {
+    margin-top: 5rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2rem;
+
+    &--box {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      & > * {
+        margin-bottom: 1.5rem;
+      }
+      img {
+        max-width: 18rem;
+        width: 100%;
+      }
+    }
+
+    &--box:hover h3 {
+      color: $color-secondary;
+    }
+  }
+}

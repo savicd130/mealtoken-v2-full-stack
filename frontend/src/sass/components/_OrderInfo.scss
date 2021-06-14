@@ -1,0 +1,32 @@
+.order-info {
+  grid-column: full-start / full-end;
+  background-image: url("../../images/back_2.png");
+  color: $color-primary;
+  padding: 10rem 0;
+
+  &__box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    p {
+      font-weight: 400;
+    }
+
+    a {
+      font-size: 1.7rem;
+      font-weight: 400;
+      text-transform: uppercase;
+      border: 2px solid $color-primary;
+      padding: 1rem 2rem;
+      display: flex;
+      align-items: center;
+      transition: all 0.4s;
+    }
+
+    a:hover {
+      background-color: $color-primary;
+      color: $color-white;
+    }
+  }
+}

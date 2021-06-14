@@ -1,0 +1,82 @@
+.about-img {
+  grid-column: full-start / full-end;
+
+  height: 55rem;
+  background-image: url("../../images/about-chef.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.about {
+  margin: 10rem 0;
+  grid-column: center-start / center-end;
+
+  &__content {
+    padding: 0 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    & > * {
+      margin-bottom: 4rem;
+    }
+
+    h3 {
+      font-size: 3rem;
+      font-weight: 400;
+      letter-spacing: 0.1rem;
+    }
+
+    img {
+      width: 22rem;
+    }
+
+    h4 {
+      font-size: 1.8rem;
+      text-align: center;
+      opacity: 0.9;
+    }
+
+    p {
+      text-align: center;
+      opacity: 0.9;
+      font-size: 1.7rem;
+    }
+  }
+
+  &__address {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 8rem;
+
+    &--box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      h2 {
+        opacity: 0.8;
+      }
+
+      div {
+        text-align: center;
+        opacity: 0.8;
+      }
+
+      a {
+        border: 0.2rem solid $color-white;
+        padding: 0.8rem 2.5rem;
+        text-transform: uppercase;
+        transition: all 0.2s;
+      }
+
+      a:hover {
+        border: 0.2rem solid $color-secondary;
+        color: $color-secondary;
+      }
+
+      & > * {
+        margin-bottom: 3rem;
+      }
+    }
+  }
+}
