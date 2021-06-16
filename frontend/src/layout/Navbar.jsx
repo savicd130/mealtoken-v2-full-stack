@@ -11,8 +11,6 @@ import { Link } from "react-router-dom";
 import Login from "../components/Login";
 import { useDispatch, useSelector } from "react-redux";
 import { logoutAction } from "../Redux/actions/LoginAuthAction";
-import PeopleIcon from "@material-ui/icons/People";
-import DescriptionIcon from "@material-ui/icons/Description";
 import LoadingBoxFullScreen from "./LoadingBoxFullScreen";
 
 export default function Navbar() {
@@ -61,20 +59,6 @@ export default function Navbar() {
                       <LocalShippingIcon fontSize="large" /> <p>Orders</p>
                     </Link>
                   </li>
-                  {userInfo.admin && (
-                    <>
-                      <li>
-                        <Link to="/users">
-                          <PeopleIcon fontSize="large" /> <p>Users</p>
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="/users">
-                          <DescriptionIcon fontSize="large" /> <p>Products</p>
-                        </Link>
-                      </li>
-                    </>
-                  )}
                   <li>
                     <Link onClick={() => logout()} to="#">
                       <ExitToAppIcon fontSize="large" /> <p>Sign Out</p>

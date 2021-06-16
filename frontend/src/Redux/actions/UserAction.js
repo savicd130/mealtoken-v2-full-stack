@@ -124,7 +124,6 @@ export const userAvatarUpdate = (avatarFile) => async (dispatch, getState) => {
     dispatch({ type: USER_LOGIN_SUCCESS, payload: data });
     localStorage.setItem("authUser", JSON.stringify(data));
   } catch (error) {
-    console.log(error.response.data.error);
     dispatch({
       type: USER_AVATAR_UPDATE_FAIL,
       payload:
@@ -151,7 +150,6 @@ export const userChangePassword = (passwords) => async (dispatch, getState) => {
     dispatch({ type: USER_LOGIN_SUCCESS, payload: data });
     localStorage.setItem("authUser", JSON.stringify(data));
   } catch (error) {
-    console.log(error.response.data.error);
     dispatch({
       type: USER_CHANGE_PASSWORD_FAIL,
       payload:

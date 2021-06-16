@@ -1,6 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import ChevronRightIcon from "@material-ui/icons/ChevronRight";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 
 export default function OrderInfo() {
   return (
@@ -11,7 +11,7 @@ export default function OrderInfo() {
             <h6>GET YOUR PIZZA DELIVERED!</h6>
             <p>ENJOY OUR LUSCIOUS DISHES WHEREVER YOU WANT</p>
           </div>
-          <Link>
+          <Link to="/menu/pizza">
             Make an order now <ChevronRightIcon fontSize="large" />
           </Link>
         </div>

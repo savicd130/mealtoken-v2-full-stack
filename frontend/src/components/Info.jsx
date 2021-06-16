@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 export default function Info() {
   return (
@@ -6,7 +6,7 @@ export default function Info() {
       <div className="container-home">
         <div className="features">
           <div className="features__box">
-            <img src="./images/icons/icon_1.png" alt="icon1" />
+            <img src="/images/icons/icon_1.png" alt="icon1" />
             <h4>QUALITY FOODS</h4>
             <p>
               Sit amet, consectetur adipiscing elit quisque eget maximus velit,
@@ -15,7 +15,7 @@ export default function Info() {
             </p>
           </div>
           <div className="features__box">
-            <img src="./images/icons/icon_3.png" alt="icon1" />
+            <img src="/images/icons/icon_3.png" alt="icon1" />
             <h4>FASTEST DELIVERY</h4>
             <p>
               Sit amet, consectetur adipiscing elit quisque eget maximus velit,
@@ -24,7 +24,7 @@ export default function Info() {
             </p>
           </div>
           <div className="features__box">
-            <img src="./images/icons/icon_2.png" alt="icon1" />
+            <img src="/images/icons/icon_2.png" alt="icon1" />
             <h4>ORIGINAL RECIPES</h4>
             <p>
               Sit amet, consectetur adipiscing elit quisque eget maximus velit,

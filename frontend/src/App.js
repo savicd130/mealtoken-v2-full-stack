@@ -1,4 +1,4 @@
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Redirect, Route } from 'react-router-dom';
 import Footer from './layout/Footer';
 import Navbar from './layout/Navbar';
 import './sass/main.scss';
@@ -23,7 +23,7 @@ function App() {
         </header>
         <main className="main">
           <Route path="/" component={HomeScreen} exact />
-          <Route path="/menu" component={MenuScreen} />
+          <Route path="/menu/:category?" component={MenuScreen} />
           <Route path="/about" component={AboutScreen} />
           <Route path="/shop" component={ShopScreen} />
           <Route path="/contact" component={ContactScreen} />
