@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Info from '../components/Info';
 import { Link, Redirect, useParams } from 'react-router-dom';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
@@ -8,29 +8,46 @@ import { productsByCategoryAction } from '../Redux/actions/ProductsAction';
 import ErrorBox from '../layout/ErrorBox';
 import LoadingBox from '../layout/LoadingBox';
 import { useRef } from 'react';
+import { Pagination } from '@material-ui/lab';
 
 export default function MenuScreen(props) {
+  const PRODUCT_ITEM_SHOW_NUMBER = 8;
+
   const { category } = useParams();
+  const [page, setPage] = useState(1);
 
   const dispatch = useDispatch();
 
   const productsByCategory = useSelector(state => state.productsByCategory);
-
   const { loading, error, products } = productsByCategory;
 
   const messagesRef = useRef();
-  console.log(messagesRef);
-  const scrollToBottom = () => {
+  const scrollToTop = () => {
     messagesRef.current.scrollIntoView({
       behavior: 'smooth',
     });
   };
 
+  // PAGI
+  const handleChangePage = (event, newPage) => {
+    setPage(newPage);
+    scrollToTop();
+  };
+
+  const handlePaginationCountNum = (prod, index) => {
+    return Math.ceil(prod.length / index);
+  };
+
+  const handlePagination = (prod, index) => {
+    return prod.slice((page - 1) * index, index * page);
+  };
+
   useEffect(() => {
     if (messagesRef.current) {
-      scrollToBottom();
+      scrollToTop();
     }
     dispatch(productsByCategoryAction(category));
+    setPage(1);
   }, [category, dispatch]);
 
   if (!category) {
@@ -95,7 +112,7 @@ export default function MenuScreen(props) {
           <Redirect to="/menu/pizza" />
         ) : (
           <div className="menu__content">
-            {products.map(prod => (
+            {handlePagination(products, PRODUCT_ITEM_SHOW_NUMBER).map(prod => (
               <div key={prod._id} className="menu__content--box">
                 <div className="menu__content--cart">
                   <img src={prod.imgPath} alt="prod1" />
@@ -110,7 +127,7 @@ export default function MenuScreen(props) {
                 </div>
 
                 <Link
-                  to="/something" // CHANGE
+                  to={`/product/${prod._id}`} // CHANGE
                   className="menu__content--footer"
                   onClick={e => {
                     console.log('link');
@@ -122,6 +139,17 @@ export default function MenuScreen(props) {
                 </Link>
               </div>
             ))}
+            <div className="pagination">
+              <Pagination
+                component="div"
+                count={handlePaginationCountNum(
+                  products,
+                  PRODUCT_ITEM_SHOW_NUMBER
+                )}
+                page={page}
+                onChange={handleChangePage}
+              />
+            </div>
           </div>
         )}
       </div>

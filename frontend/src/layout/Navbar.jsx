@@ -1,22 +1,22 @@
-import React, { useState } from "react";
-import PhoneAndroidIcon from "@material-ui/icons/PhoneAndroid";
-import { Badge } from "@material-ui/core";
-import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import PersonIcon from "@material-ui/icons/Person";
-import LocalShippingIcon from "@material-ui/icons/LocalShipping";
-import ExitToAppIcon from "@material-ui/icons/ExitToApp";
-import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
-import { Link } from "react-router-dom";
-import Login from "../components/Login";
-import { useDispatch, useSelector } from "react-redux";
-import { logoutAction } from "../Redux/actions/LoginAuthAction";
-import LoadingBoxFullScreen from "./LoadingBoxFullScreen";
+import React, { useState } from 'react';
+import PhoneAndroidIcon from '@material-ui/icons/PhoneAndroid';
+import { Badge } from '@material-ui/core';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import PersonIcon from '@material-ui/icons/Person';
+import LocalShippingIcon from '@material-ui/icons/LocalShipping';
+import ExitToAppIcon from '@material-ui/icons/ExitToApp';
+import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
+import { Link } from 'react-router-dom';
+import Login from '../components/Login';
+import { useDispatch, useSelector } from 'react-redux';
+import { logoutAction } from '../Redux/actions/LoginAuthAction';
+import LoadingBoxFullScreen from './LoadingBoxFullScreen';
 
 export default function Navbar() {
   const [loadingLogout, setLoadingLogout] = useState(false);
 
-  const authUser = useSelector((state) => state.authUser);
+  const authUser = useSelector(state => state.authUser);
 
   const { loading, userInfo } = authUser;
   const dispatch = useDispatch();
@@ -109,17 +109,17 @@ export default function Navbar() {
               </Link>
             </li>
             <li>
-              <Link to="about" className="btn">
+              <Link to="/about" className="btn">
                 About
               </Link>
             </li>
             <li>
-              <Link to="shop" className="btn">
+              <Link to="/shop" className="btn">
                 Shop
               </Link>
             </li>
             <li>
-              <Link to="contact" className="btn">
+              <Link to="/contact" className="btn">
                 Contact
               </Link>
             </li>

@@ -24,17 +24,17 @@ export default function Footer() {
             </Link>
           </li>
           <li>
-            <Link onClick={smoothScrool} to="about" className="btn">
+            <Link onClick={smoothScrool} to="/about" className="btn">
               About
             </Link>
           </li>
           <li>
-            <Link onClick={smoothScrool} to="shop" className="btn">
+            <Link onClick={smoothScrool} to="/shop" className="btn">
               Shop
             </Link>
           </li>
           <li>
-            <Link onClick={smoothScrool} to="contact" className="btn">
+            <Link onClick={smoothScrool} to="/contact" className="btn">
               Contact
             </Link>
           </li>

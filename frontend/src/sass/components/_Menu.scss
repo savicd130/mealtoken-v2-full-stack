@@ -51,6 +51,10 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+
+      p {
+        text-align: center;
+      }
     }
 
     &--box {
@@ -63,8 +67,8 @@
         margin-bottom: 1.5rem;
       }
       img {
-        max-width: 18rem;
         width: 100%;
+        height: 100%;
         position: relative;
       }
     }
@@ -78,6 +82,8 @@
       background-color: $color-secondary;
       img {
         opacity: 0.2;
+        width: 100%;
+        height: 100%;
       }
 
       &__btn {
@@ -94,6 +100,10 @@
     &--cart {
       position: relative;
       transition: all 0.5s;
+      max-width: 18rem;
+      max-height: 18rem;
+      width: 100%;
+      height: 100%;
 
       &__btn {
         display: none;
@@ -108,4 +118,24 @@
       }
     }
   }
+}
+
+// pagination
+.pagination {
+  grid-column: span 4;
+  justify-self: center;
+
+  svg,
+  button {
+    font-size: 1.5rem;
+    color: $color-white !important;
+  }
+}
+
+.MuiPaginationItem-page.Mui-selected {
+  background-color: rgba($color: #000000, $alpha: 0.7) !important;
+}
+
+.MuiPaginationItem-page:hover {
+  background-color: rgba($color: #000000, $alpha: 0.4) !important;
 }

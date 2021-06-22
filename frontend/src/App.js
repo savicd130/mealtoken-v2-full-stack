@@ -1,4 +1,4 @@
-import { BrowserRouter, Redirect, Route } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import Footer from './layout/Footer';
 import Navbar from './layout/Navbar';
 import './sass/main.scss';
@@ -13,6 +13,7 @@ import ProfileEditScreen from './screen/ProfileEditScreen';
 
 import UserRoute from './routes/UserRoute';
 import ProfileChangePasswordScreen from './screen/ProfileChangePasswordScreen';
+import ProductScreen from './screen/ProductScreen';
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path="/shop" component={ShopScreen} />
           <Route path="/contact" component={ContactScreen} />
           <Route path="/register" component={RegisterScreen} />
+          <Route path="/product/:id" component={ProductScreen} />
 
           <UserRoute path="/profile" component={ProfileScreen} exact />
           <UserRoute path="/profile/edit" component={ProfileEditScreen} />
