@@ -31,7 +31,6 @@ productRouter.get('/uploadproducts', userAuth, adminAuth, async (req, res) => {
 // @access  Public
 
 productRouter.get('/:category', async (req, res) => {
-  console.log(req.params.category);
   try {
     const products = await Product.find({ category: req.params.category });
     res.status(200).send(products);
